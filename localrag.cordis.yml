@@ -1,0 +1,17 @@
+# localrag-mcp: local document RAG retrieval for DeepSeek Harness.
+# Enable:  dsh web --patch localrag.cordis.yml
+# Requires: python on PATH (3.10+) and `pip install -r requirements.txt`.
+# The harness spawns `python server.py` as an MCP stdio child, discovers the
+# tools, and exposes them to the agent as `mcp__localrag__<tool>`.
+# If python is not on PATH, replace `command: python` with its full path,
+# e.g. C:\Users\huaji\AppData\Local\Programs\Python\Python312\python.exe
+
+- insert:
+    - id: localrag
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: localrag
+        transport: stdio
+        command: python
+        args: ['D:\programing\python\LangChain\models\localrag-mcp\server.py']
+        cwd: !!js process.cwd()

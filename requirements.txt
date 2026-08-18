@@ -1,0 +1,6 @@
+# NOTE: mcp is pinned to the 1.x line on purpose. mcp 2.0 (released later)
+# removed the FastMCP high-level API and restructured everything; this project
+# targets the stable, documented 1.x FastMCP interface.
+mcp>=1.0,<2.0
+chromadb>=0.5.0
+fastembed>=0.3.0
